@@ -3,8 +3,10 @@ import 'package:myshop/models/product.dart';
 
 import 'user_product_list_tile.dart';
 import 'products_manager.dart';
+import '../shared/app_drawer.dart';
 
 class UserProductScreen extends StatelessWidget {
+  static const routeName = '/user-products';
   const UserProductScreen({super.key});
 
   @override
@@ -17,6 +19,7 @@ class UserProductScreen extends StatelessWidget {
           buildAddButton(),
         ],
       ),
+      drawer: const AppDrawer(),
       body: RefreshIndicator(
         onRefresh: () async => print('refresh products'),
         child: buildUserProductListView(productsManager),
