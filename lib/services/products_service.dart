@@ -12,7 +12,6 @@ class ProductsService extends FirebaseService {
 
   Future<List<Product>> fetchProducts([bool filterByUser = false]) async {
     final List<Product> products = [];
-
     try {
       final filters =
           filterByUser ? 'orderBy="creatorId"&equalTo="$userId"' : '';
@@ -25,7 +24,6 @@ class ProductsService extends FirebaseService {
         print(productsMap['error']);
         return products;
       }
-
       final userFavoritesUrl =
           Uri.parse('$databaseUrl/userFavorites/$userId.json?auth=$token');
       final userFavoritesResponse = await http.get(userFavoritesUrl);
