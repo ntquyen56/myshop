@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+// import 'dart:html';
 import '../../models/http_exception.dart';
 import '../shared/dialog_utils.dart';
 
@@ -137,7 +137,7 @@ class _AuthCardState extends State<AuthCard> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
         ),
-        // backgroundColor: Theme.of(context).primaryColor,                
+        backgroundColor: Theme.of(context).primaryColor,
         padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 8.0),
         textStyle: TextStyle(
           color: Theme.of(context).primaryTextTheme.headline6?.color,

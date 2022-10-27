@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../orders/orders_screen.dart';
-import '../products/user_products_screen.dart';
+// import '../products/user_products_screen.dart';
 import '../auth/auth_manager.dart';
 
 class AppDrawer extends StatelessWidget {

@@ -3,7 +3,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 import 'ui/screens.dart';
 
-import 'ui/screens.dart';
+// import 'ui/screens.dart';
 
 Future<void> main() async {
   await dotenv.load();
@@ -20,9 +20,17 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => AuthManager(),
         ),
-        ChangeNotifierProvider(
+        // ChangeNotifierProvider(
+        //   create: (ctx) => ProductsManager(),
+        // ),
+        ChangeNotifierProxyProvider<AuthManager, ProductsManager>(
           create: (ctx) => ProductsManager(),
+          update: (ctx, authManager, productsManager) {
+            productsManager!.authToken = authManager.authToken;
+            return productsManager;
+          },
         ),
+
         ChangeNotifierProvider(
           create: (ctx) => CartManager(),
         ),
